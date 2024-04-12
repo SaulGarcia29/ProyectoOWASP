@@ -1,0 +1,63 @@
+<style>
+    /*Este estilo es preferible colocarlo en un archivo separado, 
+    esto para que no se creen nuevamente las clases cuando 
+    se lleme a la directiva*/
+
+    /*This style must be in a separate .css file to 
+    avoid duplicate class when the directive load.*/
+    
+    .pagination *{
+        font-weight: normal;
+    }
+    .pagination {
+        display: inline-block;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border: 1px solid #ddd;
+    }
+
+        .pagination a.active {
+            background-color: #6995d1;
+            color: white;
+            border: 1px solid #435f85;
+            font-weight: bold;
+        }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+
+    .pagination a:first-child {
+        border-top-left-radius: 0.3em;
+        border-bottom-left-radius: 0.3em;
+    }
+
+    .pagination a:last-child {
+        border-top-right-radius: 0.3em;
+        border-bottom-right-radius: 0.3em;
+    }
+</style>
+
+<div class="center">
+    <div class="pagination">
+        <a href="" ng-click="first()">&laquo;</a>
+        <a href="" ng-click="previous()"><</a>
+        <a href=""
+           ng-repeat="pageitem in StepPages"
+           class="{{ pageitem == ngModel ? 'active' : ''}}"
+           ng-click="selectPage(pageitem)">
+            {{pageitem}}
+        </a>
+        <a href="" ng-click="next()">></a>
+        <a href="" ng-click="last()">&raquo;</a>
+    </div>
+</div>

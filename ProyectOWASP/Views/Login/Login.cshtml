@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/ImgProject/ICONO LOGO ADVA.ico" />
+    <!-- vendor css -->
+    <link href="~/Bracket Design/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Bracket Design/lib/Ionicons/css/ionicons.css" rel="stylesheet" />
+
+    <!-- Bracket CSS -->
+    <link href="~/Bracket Design/css/bracket.css" rel="stylesheet" />
+
+    <style>
+        .form-control, .dataTables_filter input {
+            display: block;
+            width: 100%;
+            padding: 0.65rem 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.25;
+            color: #495057;
+            background-color: #fff;
+            background-image: none;
+            background-clip: padding-box;
+            border: 1px solid black;
+            border-radius: 3px;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        }
+        .input-container {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            padding: 10px;
+            background: #4f78b1;
+            color: white;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+        }
+
+            .input-field:focus {
+                border: 2px solid #4f78b1;
+            }
+    </style>
+</head>
+<body>
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+        <div class="login-wrapper wd-300 wd-xs-300 pd-25 pd-xs-30 bg-white rounded shadow-base">
+            <div class="mg-b-20">
+                <img src="~/Content/ImgProject/LOGO ADVA PNG.png" style="width:100%;height:100px" />
+            </div>
+            @*<div class="tx-center mg-b-20">Administración</div>*@
+
+            <form method="post">
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fa fa-user icon tx-24"></i>
+                        <input class="input-field" type="text" placeholder="Nombre de usuario" name="UserName">
+                    </div>
+                </div><!-- form-group -->
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="fa fa-key icon tx-24"></i>
+                            <input class="input-field" type="password" placeholder="Contraseña" name="Password">
+                        </div>
+                    </div><!-- form-group -->
+                    @*<a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>*@
+                </div><!-- form-group -->
+                <button type="submit" class="btn btn-ProjectOWASPTheme btn-block">INICIAR SESIÓN</button><br />
+                <center><label class="text-danger" id="Error">@ViewBag.error</label></center>
+            </form>
+            @*<div class="mg-t-60 tx-center">Not yet a member? <a href="" class="tx-info">Sign Up</a></div>*@
+        </div><!-- login-wrapper -->
+    </div><!-- d-flex -->
+
+    <script src="~/Bracket Design/lib/jquery/jquery.js"></script>
+    <script src="~/Bracket Design/lib/popper.js/popper.js"></script>
+    <script src="~/Bracket Design/lib/bootstrap/bootstrap.js"></script>
+
+
+    <script>
+
+        $("#Error").attr("hidden", false);
+        setTimeout(function () {
+            $("#Error").attr("hidden", true);
+        }, 3000);
+
+    </script>
+
+</body>
+</html>

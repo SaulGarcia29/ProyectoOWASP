@@ -1,0 +1,2 @@
+C:\Users\saulx\source\repos\ProyectOWASP\ProyectOWASP\obj\Debug\ProyectOWASP.csproj.AssemblyReference.cache
+C:\Users\saulx\source\repos\ProyectOWASP\ProyectOWASP\obj\Debug\ProyectOWASP.csproj.CoreCompileInputs.cache
