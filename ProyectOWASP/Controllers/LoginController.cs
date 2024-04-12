@@ -34,10 +34,8 @@ namespace ProyectOWASP.Controllers
             {
                 using (ProyectOWASPContext db = new ProyectOWASPContext())
                 {
-                    //var AdminId = _LoginService.GetIdAdmin();
-                    //var login = LoginService.ValidarUsuario(Nombre, Password);
                     Password = LoginService.EncodePasswordToBase64(Password);
-                    var login = db.Usuarios.Where(x => x.UserName == UserName && x.Password == Password).FirstOrDefault();
+                    var login = LoginService.GetLoginUsuario(UserName, Password);
                     if (login != null)
                     {
                         Session.LoginUser(login);

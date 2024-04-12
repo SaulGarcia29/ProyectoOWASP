@@ -24,18 +24,25 @@ namespace ProyectOWASP.BusinessLayer
             this._connection = new SqlConnection(Conexion);
         }
 
+        // Método para insertar un registro de log en la base de datos
         public void InsertLog(int UsuarioId, string Modulo, string Pagina, string Descripcion)
         {
-            string hostName = Dns.GetHostName();
-            IPAddress[] ipAddresses = Dns.GetHostAddresses(hostName);
-
-            foreach (IPAddress ipAddress in ipAddresses)
-            {
-                Console.WriteLine(ipAddress.ToString());
-            }
+            // Define la consulta SQL para insertar el registro de log en la tabla LogTable
             var query = "INSERT INTO LogTable VALUES (@LogDate, @UsuarioId, @Modulo, @Pagina, @Descripcion)";
-            var parameters = new { LogDate = DateTime.Now, UsuarioId = UsuarioId, Modulo = Modulo, Pagina = Pagina, Descripcion = Descripcion };
+
+            // Define los parámetros para la consulta SQL utilizando un objeto anónimo
+            var parameters = new
+            {
+                LogDate = DateTime.Now, 
+                UsuarioId = UsuarioId, 
+                Modulo = Modulo, 
+                Pagina = Pagina, 
+                Descripcion = Descripcion
+            };
+
+            // Ejecuta la consulta SQL utilizando el objeto de conexión _connection y los parámetros definidos
             _connection.Execute(query, parameters);
         }
+
     }
 }

@@ -10,6 +10,7 @@ using ProyectOWASP.LocalSecurity;
 
 namespace ProyectOWASP.Controllers
 {
+    [Authentication]
     public class RolesController : Controller
     {
         LoginService loginService;
